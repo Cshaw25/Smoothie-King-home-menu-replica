@@ -7,3 +7,9 @@ Down below is a demo of the webpage along with the official Smoothie King webpag
 
 https://github.com/user-attachments/assets/1012f37e-4302-447f-afad-454e733d3fb3
 
+# Official Smoothie King Home Page
+
+https://github.com/user-attachments/assets/c2cf7f7a-1926-4142-90b5-f7b445456ce0
+
+
+
