@@ -1,0 +1,846 @@
+/* the bar*/
+.Header{
+    position: relative;
+    display:flex;
+    padding:20px;
+    border-radius: 8px;
+    height:80px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index:0;
+}
+body{
+    overflow-x: hidden;
+}
+/*the ul that contains download our app, the nav and order now buttons */
+.reachOut{
+    
+    position: absolute;
+    left:50%;
+    font-size: 18px;
+    top: -7px;
+    /* Font should change*/
+    font-family: 'Arial narrow',sans-serif;
+     font-weight: 600;
+    color:rgb(227, 27, 35);
+    display:flex;
+    list-style: none;
+}
+/* download is the parnet div, download options is the dropdown*/
+.download{
+    text-wrap: nowrap;
+    display:flex;
+}
+.downloadOptions{
+    position: absolute;
+    text-align: center;
+    display:block;
+    top:0px;
+    left:18px;
+    background-color:white;
+    width:160px;
+    height:180px;
+    z-index:7;
+    opacity: 0;
+    visibility: hidden;
+    transition:top 0.3s;
+
+}
+.download:hover .downloadOptions{
+    top:20px;
+    visibility: visible;
+    opacity:1;
+
+}
+/*.icon is the div that makes the phone, using a rectangular border  */
+.icon{
+    border:2px solid;
+    border-color: rgb(227, 27, 35);
+    width:9px;
+    height: 16px;
+    border-radius: 20%;
+    text-wrap: nowrap;
+    position: relative;
+    margin-right: 8px;
+}
+/* the dot in the bottom middle of .icon, to make it look like a phone*/
+.iconDot{
+    text-wrap: nowrap;
+    position:absolute;
+    left:2.5px;
+    top:-2px;
+}
+
+
+.findStore{
+    position: absolute;
+    text-wrap:nowrap;
+    left:118%;
+    display:flex;
+}
+.findStore img{
+    margin-top: -5px;
+}
+.findStore figcaption{
+    margin-left:5px;
+}
+.orderNowBorder{
+    display:flex;
+    top:-10px;
+    text-wrap: nowrap;
+    position:absolute;
+    left:196%;
+    background-color: rgb(227, 27, 35);
+    color:white;
+    width:158px;
+    height: 40px;
+    border-radius: 15% / 50%;
+    
+}
+/* */
+.borderText{
+    position:absolute;
+    top:10px;
+    left:30px;
+}
+.smoothieIcon img{
+    position: absolute;
+    left:12px;
+    top:0px;
+    margin-top:4px;
+}
+/* The entire bottom row including logo*/
+.navBar{
+    position: absolute;
+    display:flex;
+    top:50px;
+    list-style: none;
+    font-family:'Arial narrow',sans-serif;
+    font-size: 16.5px;
+    font-weight: 550;
+    left:-30px;
+}
+.logo{
+    position: absolute;
+    top:-40px;
+    left:48px;
+}
+.navOp1{
+    position: absolute;
+    text-wrap: nowrap;
+    width:100px;
+    height:90px;
+    left:290px;
+    top:9px;
+
+}
+.navOp1 img{
+    position: absolute;
+    left:79px;
+    top:-1px;
+}
+/*The template for every dropdown in the bottom row.hover effect in js file */
+.dropDown{
+    font-weight:600;
+    position: absolute;
+    background-color:white;
+    left:-30px;
+    padding:23px 50px 25px 0px;
+    width:165px;
+    z-index:10;
+    visibility: hidden;
+    top:-10px;
+    /* could change linear to match the smoothie king animation.becomes slower at the very end of the dropdown animation*/
+    transition: top 0.2s ease,visibility 0s linear 0.3s;
+}
+/* The bar that appears under navOp1 when hovering over the second option. hover effect in javascript file*/
+.sideBar{
+    position: absolute;
+    list-style-type: none;
+    background-color: rgb(250, 246, 246);
+    left:60px;
+    top:-61px;
+    padding:23px 50px 25px 0px;
+    width:165px;
+    z-index:10;
+    opacity: 0;
+    visibility: hidden;
+    transition:left 0.3s,opacity 0.3s ease,visibility 0.05s ease;
+}
+/* the length of the underline is determined by the width of its parent div + pixels. see in js file */
+.underline{
+    padding:0;
+    margin:0;
+    margin-top:15px;
+    margin-left:-5px;
+    background-color: rgb(227, 27, 35);
+    height:4px;
+    width:1px;
+    opacity: 0;
+    transition: opacity 230ms ease-in;
+}
+/* The that holds the text of each nav option.*/
+.option{
+    display:inline;
+}
+.dropDownText{
+    list-style-type:none;
+    z-index:10;
+    position: relative;
+    padding:0;
+}
+
+.dropDownText li{
+    padding-bottom:10px;
+    padding-top: 10px;
+    width:216px;
+    transition:background-color 0.3s ease;
+    z-index:10;
+}
+/*adds spacing before each element within the dropdown to match the smoothie king design  */
+.dropDownText li::before{
+    content:"\00a0\00a0\00a0";
+}
+/* refers to the only element within a dropdown, that has another dropdown option (sidebar)*/
+.withDropDown{
+    margin-left:-3px;
+    position: relative;
+}
+.withDropDown img{
+    margin-left:67px; 
+    margin-top: 8px;
+}
+/* below is each element within said drop down, a few lines above. (ln 197)*/
+.sideBar :nth-child(1):hover{
+    background-color: rgb(226, 62, 152);
+    color:white;
+}
+.sideBar :nth-child(2):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(3):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(4):hover{
+    background-color:rgb(46, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(5):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(6):hover{
+    background-color: rgb(71, 53, 121);
+    color:white;
+}
+.sideBar :nth-child(7):hover{
+    background-color:rgb(34, 109, 50);
+    color:white;
+}
+.sideBar :nth-child(8):hover{
+    background-color: rgb(179, 117, 4);
+    color:white;
+}
+.sideBar :nth-child(9):hover{
+    background-color: rgb(194, 16, 114);
+    color:white;
+}
+.sideBar :nth-child(10):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(11):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.sideBar :nth-child(12):hover{
+    background-color: rgb(221, 9, 9);
+    color:white;
+}
+.dropDownText li:hover{
+    background-color: rgb(250, 246, 246);
+}
+.navOp2{
+    position: absolute;
+    text-wrap: nowrap;
+    left:422px;
+    top:8px;
+}
+.navOp2 img{
+    position: absolute;
+    left:105px;
+    top:-1px;
+}
+.navOp3{
+    position: absolute;
+    text-wrap: nowrap;
+    left:578px;
+    top:8px;
+
+}
+.navOp3 img{
+    position: absolute;
+    left:145px;
+    top:-1px;
+}
+.navOp4{
+    position: absolute;
+    text-wrap: nowrap;
+    left:774px;
+    top:8px;
+}
+.navOp4 img{
+    position: absolute;
+    left:90px;
+    top:-1px;
+}
+.navOp5{
+    position: absolute;
+    text-wrap: nowrap;
+    left:920px;
+    top:8px;
+
+}
+.navOp6{
+    position: absolute;
+    text-wrap: nowrap;
+    
+    left:1025px;
+    top:8px;
+}
+/* just the container that holds the search icon, for animation purposes.*/
+.searchBox{
+    position: absolute;
+    background-color: rgb(241, 239, 239);
+    width: 41px;
+    height:41px;
+    left:200px;
+    top:-12px;
+    transition:background-color 0.3s ease;
+}
+/* changes the background color of the search icon when you hover over it, to match the smoothie king design*/
+.searchBox:hover{
+    background-color:rgb(226, 220, 220);
+}
+/* the search icon within the box*/
+.searchIcon{
+    position: absolute;
+    left:11.5px;
+    top:13px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+/*shrinks when you hover over it */
+.searchBox:hover .searchIcon{
+    height:17px;
+    width:17px;
+}
+
+/*  */
+
+.section1{
+    position: relative;
+    z-index:-10;
+    margin-top:-14px;
+    margin-left:0px;
+    margin-right:0px;
+    padding:0;
+    /* recreates the background gradient of the smoothie king 
+    promotional video. */
+    background-image:radial-gradient(ellipse at 50% 40%,#f8b8cd ,#F3769E,#ED297B 65%);
+    height:600px;
+    width:100%;
+   
+}
+
+/* style for the header text in the first section. (only the first row) */
+.header1{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    padding-top:41px;
+    font-size: 16px;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    pointer-events: none;
+    z-index:-1;
+}
+/* the second row in the same section. The "lemonade" subtitle*/
+.header2{
+    /* aims to recreate the font used, by using transform and italic style
+      the actual font used is unavailable  */
+    z-index:-10;
+    display:flex;
+    justify-content:center;
+    padding-top:22px;
+    font-family: 'Arial Narrow',sans-serif;
+    letter-spacing: 1.8px;
+    transform:skew(-3deg) scaleY(2);
+    font-size: 27px;
+    font-style:italic;
+    pointer-events: none;
+    color:white;
+    font-weight:900;
+}
+
+/* The yum yum text on the last row in the first section */
+.header3{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    padding-top:41px;
+    font-size: 18px;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    pointer-events: none;
+    z-index:-1;
+}
+
+/* gotta get some text*/
+.header4{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    padding-top:2px;
+    font-size: 18px;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    pointer-events: none;
+    z-index:-1;
+}
+
+/*the smoothie ad */
+.smoothie-Ad{
+    position:relative;
+    top:72px;
+    left:148px;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* the strange page image right next to the outside 
+    bottom left corner of the video*/
+.arrow-with-numbers{
+    position: relative;
+    top:-172px;
+    left:90px;
+}
+.text-inNumbers{
+    position:absolute;
+    left:-30px;
+    top:4px;
+    font-size:12px;
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+}
+.redAccent{
+    color:rgb(227, 27, 35);
+}
+.arrow1{
+    position: absolute;
+    transform:rotate(180deg);
+    left: -58px;
+}
+.arrow2{
+    position:absolute;
+    left:1px;
+}
+
+
+.section2{
+    position: relative;
+    top:300px;
+    margin-top:150px;
+}
+.sectionPicture{
+    position:absolute;
+    left:1px;
+}
+
+.section3{
+    margin-top:1050px;
+}
+
+.section4 img{
+    margin-top: 530px;
+    margin-left:70px;
+}
+
+/*  start of the styling for the very botton section.*/
+.section5{
+    position: relative;
+    margin-top:2200px;
+    background-color:rgb(221, 223, 230);
+    height: 420px;
+    margin-bottom:20px;
+}
+.smoothieKingLogo2{
+    position: absolute;
+    top:80px;
+    left:40px;
+}
+.followUs{
+    position:absolute;
+    top:38%;
+    font-family:'Montserrat', sans-serif;
+    font-size:16px;
+    list-style-type: none;
+}
+
+.followUs li{
+    display:inline;
+    margin-right:20px;
+
+    
+}
+.black-row{
+    position:absolute;
+    background-color:black;
+    height:30px;
+    width:100%;
+    top:90.1%;
+    color:white;
+    padding-top:10px;
+}
+
+.terms{
+    padding:0;
+    text-align:right;
+    margin-top:-17px;
+    margin-right: 30px;
+}
+
+.facebookLink{
+    position: absolute;
+    z-index:100;
+    border-radius: 50%;
+    width:42px;
+    height:42px;
+    background-color:white;
+    
+}
+.facebookLink img{
+    position: absolute;
+    left:15px;
+    top:9px;
+    filter: brightness(0);
+    transition: opacity 0.4s ease-in-out; 
+    opacity: 1;
+    
+}
+
+.facebookLink:hover img{
+  opacity:.5;
+  
+}
+
+.twitterLink{
+    position: absolute;
+    margin-left:55px;
+    top:40px;
+    z-index:100;
+    border-radius: 50%;
+    width:42px;
+    height:42px;
+    background-color:white;
+    
+}
+.twitterLink img{
+    position: absolute;
+    left:11px;
+    top:11px;
+    filter: brightness(0);
+    transition: opacity 0.4s ease-in-out; 
+    opacity: 1;
+    
+}
+
+.twitterLink:hover img{
+  opacity:.5;
+  
+}
+
+.instaLink{
+    position: absolute;
+    margin-left:110.8px;
+    top:40px;
+    z-index:100;
+    border-radius: 50%;
+    width:42px;
+    height:42px;
+    background-color:white;
+    
+}
+.instaLink img{
+    position: absolute;
+    left:6.4px;
+    top:7px;
+    filter: brightness(0);
+    transition: opacity 0.4s ease-in-out; 
+    opacity: 1;
+    
+}
+
+.instaLink:hover img{
+  opacity:.5;
+  
+}
+
+.ytLink{
+    left:150px;
+    top:42;
+    margin-top:3.5px;
+    margin-left:57px;
+    position: absolute;
+    border-radius: 50%;
+    width:43px;
+    height:43px;
+    background-color:white;
+}
+.ytLogo{
+    /*filter: brightness(0) invert(1); */
+    position:absolute;
+    background-color:black;
+    border-radius: 20%;
+    height:15px;
+    width:20px;
+    left:11.2px;
+    top:14.3px;
+    transition: background-color 0.3s ease;
+}
+.ytLogo img{
+    filter:brightness(0) invert(1);
+    position: absolute;
+    rotate:90deg;
+    top:4.3px;
+    left:7px;
+}
+
+.ytLink:hover .ytLogo{
+    background-color:grey;
+}
+
+
+
+
+.pintrestLink{
+    left:150px;
+    top:4;
+    margin-top:4px;
+    margin-left:113px;
+    position: absolute;
+    border-radius: 50%;
+    width:44px;
+    height:44px;
+    background-color:white;
+}
+.pintrestLinkLogo{
+    /*filter: brightness(0) invert(1); */
+    position:absolute;
+    background-color:black;
+    border-radius: 50%;
+    height:18.5px;
+    width:18.5px;
+    left:12px;
+    top:11.5px;
+    transition: background-color 0.3s ease;
+}
+.pintrestLinkLogo img{
+    filter:brightness(0) invert(1);
+    position: absolute;
+    top:-3px;
+    z-index:20;
+    left:-5.5px;
+}
+
+ .pintrestLink:hover .pintrestLinkLogo{
+    background-color:grey;
+}
+
+.about{
+    font-family:'Montserrat condesned', sans-serif;
+    position: relative;
+    left:47.5%;
+    top:116px;
+    font-size:21px;
+    transform:scaleY(1.2);
+    list-style-type: none;
+}
+.about li{
+    font-size:13.5px;
+    margin:8px;
+    font-weight: 400px;
+    margin-left:110px;
+    transform:none;
+   
+    font-family:'Montserrat', sans-serif;
+    transform: scaleX(1.2);
+    text-decoration: none;
+}
+.about li:hover{
+    text-decoration: underline;
+}
+
+.inter{
+    font-family:'Montserrat condensed', sans-serif;
+    position: relative;
+    left:65%;
+    top:-105px;
+    font-size:21px;
+    transform:scaleY(1.2);
+    list-style-type: none;
+    font-weight:900px;
+
+}
+.inter li{
+    font-size:13.5px;
+    margin:8px;
+    font-weight: 400px;
+    margin-left:110px;
+    transform:none;
+    outline-color: black;
+    font-family:'Montserrat', sans-serif;
+    transform: scaleX(1.2);
+    text-decoration:none;
+}
+.inter li:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sideOptions{
+    position: fixed;
+    top:246px;
+    left:98.66%;
+    width:9px;
+    height:170px;
+    background-color:rgb(201, 196, 196);
+
+}
+
+.sideImageBlock{
+    position: fixed;
+    background-color: rgb(25, 76, 177);
+    top:246px;
+    /*
+        left:93.5%; */
+    left:99%;
+    width:77px;
+    height:53px;
+    
+    transition: left 0.3s ease;
+}
+.sideImage1{
+    position: fixed;
+    z-index:1;
+    top:253px;
+    left:1238px;
+    border-radius: 50%;
+    z-index:30;
+    width:42px;
+    height:42px;
+    background-color:rgb(201, 196, 196);
+}
+.sideImage1 img{
+    filter: brightness(0) invert(1);
+    left:15.5px;
+    top:10.7px;
+}
+
+.sideImageBlock2{
+    position: fixed;
+    background-color: rgb(29,161, 242);
+    top:299px;
+    /*
+        left:93.5%; */
+    left:99%;
+    width:77px;
+    height:53px;
+    
+    transition: left 0.3s ease;
+}
+.sideImage2{
+    position: fixed;
+    z-index:1;
+    top:308px;
+    left:1238px;
+    border-radius: 50%;
+    z-index:30;
+    width:42px;
+    height:42px;
+    background-color:rgb(201, 196, 196);
+}
+.sideImage2 img{
+    filter: brightness(0) invert(1);
+    left:11px;
+    top:11.5px;
+}
+
+.sideImageBlock3{
+    position: fixed;
+    background-color: rgb(189,8, 28);
+    top:352px;
+    /*
+        left:93.5%; */
+    left:99%;
+    width:77px;
+    height:53px;
+    
+    transition: left 0.3s ease;
+}
+.sideImage3{
+    position: fixed;
+    z-index:1;
+    top:360px;
+    left:1238px;
+    border-radius: 50%;
+    z-index:30;
+    width:42px;
+    height:42px;
+    background-color:rgb(201, 196, 196);
+}
+.pintrestLogo{
+    /*filter: brightness(0) invert(1); */
+    position:absolute;
+    background-color:white;
+    border-radius: 50%;
+    height:18.5px;
+    width:18.5px;
+    left:12px;
+    top:11.5px;
+}
+.pintrestP img{
+    position: absolute;
+    top:-3px;
+    left:-5.5px;
+}
+
+.smoothieStamp{
+    position:fixed;
+    left:20px;
+    top:587px;
+    background-color: white;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    box-shadow:inset 2px 2px 5px rgba(0,0,0,0.2);
+}
+.smoothieStamp img{
+    margin-left:6.5px;
+    margin-top:9px;
+}
+
+
+
+
